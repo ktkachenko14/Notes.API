@@ -1,0 +1,4 @@
+C:\Users\student.LAN\Downloads\Notes.API\Notes.API\obj\Debug\netcoreapp2.1\Notes.API.csprojAssemblyReference.cache
+C:\Users\student.LAN\Downloads\Notes.API\Notes.API\obj\Debug\netcoreapp2.1\Notes.API.csproj.CoreCompileInputs.cache
+C:\Users\student.LAN\Downloads\Notes.API\Notes.API\obj\Debug\netcoreapp2.1\Notes.API.AssemblyInfoInputs.cache
+C:\Users\student.LAN\Downloads\Notes.API\Notes.API\obj\Debug\netcoreapp2.1\Notes.API.AssemblyInfo.cs

@@ -10,6 +10,6 @@ namespace Notes.API.Resources
         public string Password { get; set; }
         public string Image { get; set; }
         public string[] UserRole { get; set; }
-        public string[] Notes { get; set; }
+
     }
 }

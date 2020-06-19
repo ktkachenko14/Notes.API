@@ -29,9 +29,10 @@ namespace Notes.API.Persistence.Context
             builder.Entity<User>().Property(x => x.Image).IsRequired();
             builder.Entity<User>().Property(x => x.Password).IsRequired();
             builder.Entity<User>().HasMany(x => x.UserRole).WithOne(x => x.User);
-            builder.Entity<User>().HasMany(x => x.Notes).WithOne(x => x.User);
+            builder.Entity<User>().HasMany(x => x.Notes).WithOne(x => x.User).HasForeignKey(p => p.Id);
             builder.Entity<User>().HasAlternateKey(x => x.Login);
-            
+            builder.Entity<User>().HasIndex(x => x.Login).IsUnique(true);
+
             builder.Entity<Note>().ToTable("Notes");
             builder.Entity<Note>().HasKey(x =>x.Id);
             builder.Entity<Note>().Property(x => x.Id).ValueGeneratedOnAdd();

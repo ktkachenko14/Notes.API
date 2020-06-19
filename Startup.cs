@@ -16,6 +16,10 @@ using Notes.API.Services;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Notes.API.Helpers;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Notes.API
 {
@@ -32,6 +36,31 @@ namespace Notes.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+            var appSettingSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingSection);
+
+            var appSettings = appSettingSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x => 
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x => 
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+            
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseInMemoryDatabase("NotesList");

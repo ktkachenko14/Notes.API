@@ -76,5 +76,14 @@ namespace Notes.API.Controllers
             var result = userResponse.GetResponseResult(userResource);
             return Ok(result);
         }
+
+        public  IActionResult CheckLogin(string login, User user)
+        {
+            if(login == user.Login)
+            {
+                return Json(false);
+            }
+            return Json(true);
+        }
     }
 }

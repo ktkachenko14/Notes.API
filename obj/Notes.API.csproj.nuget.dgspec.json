@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\API\\Notes.API\\Notes.API.csproj": {}
+    "D:\\Notes.API\\Notes.API\\Notes.API.csproj": {}
   },
   "projects": {
-    "D:\\API\\Notes.API\\Notes.API.csproj": {
+    "D:\\Notes.API\\Notes.API\\Notes.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\API\\Notes.API\\Notes.API.csproj",
+        "projectUniqueName": "D:\\Notes.API\\Notes.API\\Notes.API.csproj",
         "projectName": "Notes.API",
-        "projectPath": "D:\\API\\Notes.API\\Notes.API.csproj",
+        "projectPath": "D:\\Notes.API\\Notes.API\\Notes.API.csproj",
         "packagesPath": "C:\\Users\\Karina\\.nuget\\packages\\",
-        "outputPath": "D:\\API\\Notes.API\\obj\\",
+        "outputPath": "D:\\Notes.API\\Notes.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -49,9 +49,21 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
@@ -64,6 +76,18 @@
             "Microsoft.Extensions.DependencyModel": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.6.0, )"
             }
           },
           "imports": [
